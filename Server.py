@@ -27,6 +27,11 @@ class Server():
         accept.daemon = True
         accept.start()
 
+<<<<<<< HEAD
+        process.daemon = True
+        process.start()
+        #self.accept_connection()
+
     def commands(self, msg, client):
         command = msg.split()
 
@@ -34,6 +39,15 @@ class Server():
             self.sock.close()
             sys.exit()
 
+=======
+    def commands(self, msg, client):
+        command = msg.split()
+
+        if command[0] == '0':
+            self.sock.close()
+            sys.exit()
+
+>>>>>>> 8a43430b72b1ba791b6213800a911c1316dfafc9
         elif command[0] == '1':
             msg = self.print_menu()
             self.msg_client(msg, [], client)
@@ -66,7 +80,10 @@ class Server():
 
     def msg_client(self, msg, sender, receiver):
         con = self.clients.get(receiver)
+<<<<<<< HEAD
+=======
 
+>>>>>>> 8a43430b72b1ba791b6213800a911c1316dfafc9
         try:
             data = sender.recv(1024)
             if data and sender != receiver:
@@ -82,9 +99,25 @@ class Server():
                 connection.setblocking(1)
                 self.clients.append(connection)
                 self.address.append(address)
+
             except:
                 pass
 
+<<<<<<< HEAD
+    def process_connection(self):
+
+        while True:
+            if len(self.clients) > 0:
+                for c in self.clients:
+                    try:
+                        data = c.recv(1024)
+                        if data:
+                            self.commands(data, c)
+                    except:
+                        pass
+
+=======
+>>>>>>> 8a43430b72b1ba791b6213800a911c1316dfafc9
     def list_connections(self):
         results = ''
         for i, connection in enumerate(self.clients):
@@ -114,4 +147,5 @@ class Server():
                 self.clients.remove(c)
 
 
-s = Server()
+if __name__ == "__main__":
+    s = Server()
