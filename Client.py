@@ -33,10 +33,9 @@ class Client():
             try:
                 data = self.sock.recv(1024)
                 print('-----')
-
-                if int(pickle.loads(data).split()[0]) == int(self.id):
-                    msg = pickle.loads(data)
-                    print(msg)
+             #   if int(pickle.loads(data).split()[0]) == int(self.id):
+                msg = pickle.loads(data)
+                print(msg)
             except:
                 pass
 
