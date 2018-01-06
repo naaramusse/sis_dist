@@ -2,17 +2,18 @@ import socket
 import threading
 import sys
 
-COMMANDS = {'Menu': ['Exibe este menu'],
-            'lista': ['Lista dos clientes conectados'],
-            'broadcast': ['envia msg para todos clients conectados'],
-            'sair': ['Interrompe a connection com o cliente selecionado'],
+COMMANDS = {'1': ['Exibe este menu'],
+            '2': ['Lista dos clientes conectados'],
+            '3': ['Cria um grupo: informe o nome e clientes conectados'],
+            '4': ['Informe o grupo para enviar msg'],
+            '0': ['Interrompe a conexao com o cliente '],
             }
 
 
 class Server():
 
     def __init__(self, host="localhost", port=4000):
-
+        self.group = []
         self.clients = []
         self.address = []
 
@@ -22,40 +23,56 @@ class Server():
         self.sock.setblocking(False)
 
         accept = threading.Thread(target=self.accept_connection)
-        process = threading.Thread(target=self.process_connection)
 
         accept.daemon = True
         accept.start()
 
-        process.daemon = True
-        process.start()
+    def commands(self, msg, client):
+        command = msg.split()
 
-        while True:
-            msg = input('->')
-            if msg == 'sair':
-                self.sock.close()
-                sys.exit()
-            elif msg == 'menu':
-                self.print_menu()
-            elif msg == 'lista':
-                self.list_connections()
-           # elif msg == 'broadcast':
-            #    self.msg_clients()
-            else:
-                pass
+        if command[0] == '0':
+            self.sock.close()
+            sys.exit()
+
+        elif command[0] == '1':
+            msg = self.print_menu()
+            self.msg_client(msg, [], client)
+
+        elif command[0] == '2':
+            msg = self.list_connections()
+            self.msg_client(msg, [], client)
+
+        elif command[0] == '3':
+            try:
+                self.create_group(command[1], command[2:])
+            except:
+                msg = 'De um nome para o grupo e informe os clientes\n'
+                self.msg_client(msg, [], client)
+                return
+
+        elif command[0] == '4':
+            self.msg_to_group(command[1], [], command[2:])
+
+        else:
+            pass
 
     def print_menu(self):
-        for cmd, v in COMMANDS.items():
-            print("{0}:\t{1}".format(cmd, v[0]))
-        return
+        menu = ''
 
-    def msg_clients(self, msg, client):
-        for c in self.clients:
-            try:
-                if c != client: #Garante que o cliente não envie a msg para si mesmo
-                    c.send(msg)
-            except:
-                self.clients.remove(c)
+        for cmd, v in COMMANDS.items():
+            menu += "{0}:\t{1}".format(cmd, v[0])
+
+        return menu
+
+    def msg_client(self, msg, sender, receiver):
+        con = self.clients.get(receiver)
+
+        try:
+            data = sender.recv(1024)
+            if data and sender != receiver:
+                con.send(msg)
+        except:
+            self.clients.remove(sender)
 
     def accept_connection(self):
 
@@ -68,26 +85,33 @@ class Server():
             except:
                 pass
 
-    def process_connection(self):
-
-        while True:
-            if len(self.clients) > 0:
-                for c in self.clients:
-                    try:
-                        data = c.recv(1024)
-                        if data:
-                            self.msg_clients(data, c)
-                    except:
-                        pass
-
     def list_connections(self):
         results = ''
         for i, connection in enumerate(self.clients):
-            print(connection)
-            print('---')
+            # print(connection)
             results += str(i) + '   ' + str(connection.getsockname()[1]) + '   ' + str(
                 connection.getpeername()) + '\n'
-        print('----- clients -----' + '\n' + results)
+        return results
+
+    def create_group(self, label, group):
+        group.append(label)
+        self.group.append(group)
+        for i in self.group:
+            print(i)
+
+    def msg_to_group(self, label, client, msg):
+
+        condition = filter(lambda x: x[0] == label, self.group)
+        group = list(condition)
+        print(group)
+
+        for i, c in self.clients:
+            try:
+                if str(c.getsockname()[1]) != str(client.getsockname()[1]) and str(c.getpeername()) == group[i + 1]:
+                    # Garante que o cliente não envie a msg para si mesmo
+                    c.send(msg)
+            except:
+                self.clients.remove(c)
 
 
 s = Server()
