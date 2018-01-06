@@ -4,9 +4,9 @@ import sys
 import pickle
 
 
-class Client():
+class Client:
 
-    def __init__(self, host="localhost", port=4000):
+    def __init__(self, host='127.0.0.1', port=4000):
 
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.sock.connect((str(host), int(port)))
@@ -33,10 +33,9 @@ class Client():
             try:
                 data = self.sock.recv(1024)
                 print('-----')
-
-                if int(pickle.loads(data).split()[0]) == int(self.id):
-                    msg = pickle.loads(data)
-                    print(msg)
+             #   if int(pickle.loads(data).split()[0]) == int(self.id):
+                msg = pickle.loads(data)
+                print(msg)
             except:
                 pass
 
