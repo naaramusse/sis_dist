@@ -4,9 +4,9 @@ import sys
 import pickle
 
 
-class Client():
+class Client:
 
-    def __init__(self, host="localhost", port=4000):
+    def __init__(self, host='localhost', port=4000):
 
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.sock.connect((str(host), int(port)))
@@ -21,7 +21,7 @@ class Client():
         msgrecv.start()
 
         while True:
-            msg = input('->')
+            msg = input()
             if msg != 'sair':
                 self.send_msg(msg)
             else:
@@ -31,21 +31,16 @@ class Client():
     def msg_recv(self):
         while True:
             try:
-                data = self.sock.recv(1024)
+                msg = self.sock.recv(4096).decode('utf-8')
                 print('-----')
+                #   if int(pickle.loads(data).split()[0]) == int(self.id):
 
-                if int(pickle.loads(data).split()[0]) == int(self.id):
-                    msg = pickle.loads(data)
-                    print(msg)
+                print(msg)
             except:
                 pass
 
     def send_msg(self, msg):
-
-        #if msg.slipts()[0].isdigit():
-         #   c.sendto(msg, self.id)
-        #else:
-        self.sock.send(pickle.dumps(msg))
+        self.sock.send(msg.encode('utf-8'))
 
 
 c = Client()
