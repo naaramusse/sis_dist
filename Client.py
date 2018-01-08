@@ -12,7 +12,6 @@ class Client:
         self.sock.connect((str(host), int(port)))
         self.queue = queue.Queue()
         self.lock = threading.RLock()
-
         #print('my Id')
         #print(self.sock.getsockname()[1])
 
@@ -22,13 +21,22 @@ class Client:
         msgrecv.daemon = True
         msgrecv.start()
 
+        self.run()
+
+    def run(self):
         while True:
             msg = input()
             if msg != 'sair':
-                self.send_msg(msg)
+                self.queue.put(msg)
+                #self.send_msg(msg)
             else:
                 self.sock.close()
                 sys.exit()
+
+            if not self.queue.empty():
+                data = self.queue.get()
+                self.send_msg(data)
+                self.queue.task_done()
 
     def msg_recv(self):
         while True:
@@ -43,11 +51,14 @@ class Client:
                     self.sock.close()
 
     def send_msg(self, msg):
-        with self.lock:
-            try:
-                self.sock.send(msg)
-            except:
-                self.sock.close()
+        #self.lock.acquire()
+        #with self.lock:
+        try:
+            self.sock.send(msg.encode())
+            #self.lock.release()
+        except:
+            #self.lock.release()
+            self.sock.close()
 
 
 c = Client()

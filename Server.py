@@ -26,44 +26,45 @@ class Server:
         self.lock = threading.RLock()
 
         accept = threading.Thread(target=self.accept_connection)
+        send = threading.Thread(target=self.send_msg, daemon=True)
 
         accept.daemon = True
         accept.start()
+        send.start()
 
         self.accept_connection()
 
     def accept_connection(self):
-
         while True:
             try:
-                self.lock.acquire()
+                self.sock.setblocking(True)
+
                 connection, address = self.sock.accept()
-                connection.setblocking(False)
+                print(connection    )
+                #connection.setblocking(False)
                 self.get_client(connection)
 
             except:
                 pass
             finally:
-                self.lock.release()
+                self.sock.setblocking(False)
 
     def get_client(self, con):
         con.send('Informe seu nome:'.encode('utf-8'))
         nickname = con.recv(1024).decode('utf-8')
         self.clients[nickname] = con
-
         self.receive_msg(con)
 
     def receive_msg(self, client):
-
         while True:
             try:
-                self.lock.acquire()
+                self.sock.setblocking(True)
                 msg = client.recv(4026).decode('utf-8')
                 self.handle_data(client, msg)
             except:
                 break
             finally:
-                self.lock.release()
+                self.sock.setblocking(False)
 
     def handle_data(self, client, data):
         nick = ''
@@ -71,14 +72,11 @@ class Server:
             if con == client:
                 nick = i
         if data:
-            msg = data.decode('utf-8')
-            msg = msg.split()
-
+            msg = data.split()
             if msg[0].isdigit():
                 self.commands(client, msg[0])
             else:
-                data = msg.encode('utf-8')
-                self.queue.put((msg[1], nick, data))
+                self.queue.put((msg[1], nick, msg))
 
     def commands(self, client, msg):
 
@@ -114,30 +112,32 @@ class Server:
         return menu
 
     def send_msg(self):
-
         while True:
             if not self.queue.empty():
                 receiver, sender, msg = self.queue.get()
+                print('send')
+                print(msg)
                 if receiver.startswith('grupo'):
                     msg = msg.split()
                     self.msg_to_group(msg[0], sender, msg[1:])
                 else:
-                    self.msg_client(msg, sender, receiver)
+                    self.msg_client(msg[2:], sender, receiver)
                 self.queue.task_done()
 
     def msg_client(self, msg, sender, receiver):
-
-        con = self.clients.get(receiver)
+        con = self.clients[receiver]
+        data = ' '
         try:
-            self.lock.acquire()
-            if msg and sender != receiver:
-                msg = sender + " " + msg
-                con.send(msg)
+            self.sock.setblocking(True)
+            if msg != receiver and sender != receiver :
+                data = sender + ' diz ' + data.join(msg)
+                con.send(data.encode())
         except:
+            self.sock.setblocking(False)
             pass
 
         finally:
-            self.lock.release()
+            self.sock.setblocking(False)
 
     def list_connections(self):
 
