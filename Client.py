@@ -1,18 +1,20 @@
 import socket
 import threading
 import sys
-import pickle
+import queue
 
 
-class Client():
+class Client:
 
-    def __init__(self, host="localhost", port=4000):
+    def __init__(self, host='localhost', port=4000):
 
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.sock.connect((str(host), int(port)))
+        self.queue = queue.Queue()
+        self.lock = threading.RLock()
 
-        print('my Id')
-        print(self.sock.getsockname()[1])
+        #print('my Id')
+        #print(self.sock.getsockname()[1])
 
         self.id = self.sock.getsockname()[1]
         msgrecv = threading.Thread(target=self.msg_recv)
@@ -21,7 +23,7 @@ class Client():
         msgrecv.start()
 
         while True:
-            msg = input('->')
+            msg = input()
             if msg != 'sair':
                 self.send_msg(msg)
             else:
@@ -30,22 +32,22 @@ class Client():
 
     def msg_recv(self):
         while True:
-            try:
-                data = self.sock.recv(1024)
-                print('-----')
+            with self.lock:
+                try:
+                    msg = self.sock.recv(4096).decode('utf-8')
+                    print('-----')
+                    #   if int(pickle.loads(data).split()[0]) == int(self.id):
 
-                if int(pickle.loads(data).split()[0]) == int(self.id):
-                    msg = pickle.loads(data)
                     print(msg)
-            except:
-                pass
+                except:
+                    self.sock.close()
 
     def send_msg(self, msg):
-
-        #if msg.slipts()[0].isdigit():
-         #   c.sendto(msg, self.id)
-        #else:
-        self.sock.send(pickle.dumps(msg))
+        with self.lock:
+            try:
+                self.sock.send(msg)
+            except:
+                self.sock.close()
 
 
 c = Client()
