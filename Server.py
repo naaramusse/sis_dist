@@ -27,7 +27,6 @@ class Server:
         self.sock.bind((str(host), int(port)))
         self.sock.listen(10)
         self.sock.setblocking(False)
-        self.lock = threading.RLock()
 
         accept = threading.Thread(target=self.accept_connection)
         send = threading.Thread(target=self.send_msg, daemon=True)
