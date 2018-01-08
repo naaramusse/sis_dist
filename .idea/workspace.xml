@@ -15,11 +15,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file leaf-file-name="Server.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-2126">
               <caret line="19" column="34" lean-forward="true" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+=======
+      <file leaf-file-name="Server.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Server.py">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="25">
+              <caret line="65" column="21" lean-forward="true" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="-1719">
+              <caret line="14" column="52" lean-forward="true" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
+=======
+            <state relative-caret-position="102">
+              <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+>>>>>>> 8a43430b72b1ba791b6213800a911c1316dfafc9
+>>>>>>> 4afd54728609af2711589e57f8596d838baa74dd
+>>>>>>> d99000e4551091b9e2d1491da2e6b8550c978d2d
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -27,20 +45,70 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="Client.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
               <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+=======
+      <file leaf-file-name="Client.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Client.py">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="646">
+              <caret line="38" column="18" lean-forward="false" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+>>>>>>> d99000e4551091b9e2d1491da2e6b8550c978d2d
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
+    </leaf>
+  </component>
+=======
+      <file leaf-file-name="Server.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Downloads/Server.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1565">
+              <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="teste.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/teste.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1088">
+              <caret line="64" column="115" lean-forward="false" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="115" />
+              <folding />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="136">
+              <caret line="8" column="39" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="39" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+=======
+            <state relative-caret-position="34">
+              <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+              <folding />
+>>>>>>> 8a43430b72b1ba791b6213800a911c1316dfafc9
+>>>>>>> 4afd54728609af2711589e57f8596d838baa74dd
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+<<<<<<< HEAD
+>>>>>>> d99000e4551091b9e2d1491da2e6b8550c978d2d
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -48,6 +116,11 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 4afd54728609af2711589e57f8596d838baa74dd
+>>>>>>> d99000e4551091b9e2d1491da2e6b8550c978d2d
   <component name="FindInProjectRecents">
     <findStrings>
       <find>msg_clients</find>
@@ -62,6 +135,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/teste.py" />
         <option value="$PROJECT_DIR$/Server.py" />
         <option value="$PROJECT_DIR$/Client.py" />
@@ -69,6 +143,18 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
+=======
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/teste.py" />
+=======
+>>>>>>> 4afd54728609af2711589e57f8596d838baa74dd
+        <option value="$PROJECT_DIR$/Client.py" />
+        <option value="$PROJECT_DIR$/Server.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+>>>>>>> d99000e4551091b9e2d1491da2e6b8550c978d2d
     <option name="x" value="732" />
     <option name="y" value="39" />
     <option name="width" value="629" />
@@ -89,6 +175,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
+      <pane id="Scope" />
+>>>>>>> d99000e4551091b9e2d1491da2e6b8550c978d2d
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -101,11 +191,26 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../chat teste" />
+=======
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+<<<<<<< HEAD
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Bate-Papo-master/Bate-Papo-master" />
+=======
+<<<<<<< HEAD
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Bate-Papo-master/Bate-Papo-master" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+>>>>>>> 8a43430b72b1ba791b6213800a911c1316dfafc9
+>>>>>>> 4afd54728609af2711589e57f8596d838baa74dd
+>>>>>>> d99000e4551091b9e2d1491da2e6b8550c978d2d
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -120,7 +225,15 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Python.Client">
+=======
+<<<<<<< HEAD
+  <component name="RunManager" selected="Python.Client">
+=======
+  <component name="RunManager" selected="Python.Server">
+>>>>>>> 4afd54728609af2711589e57f8596d838baa74dd
+>>>>>>> d99000e4551091b9e2d1491da2e6b8550c978d2d
     <configuration name="Client" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -140,6 +253,10 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d99000e4551091b9e2d1491da2e6b8550c978d2d
     <configuration name="Server (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -158,6 +275,11 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 4afd54728609af2711589e57f8596d838baa74dd
+>>>>>>> d99000e4551091b9e2d1491da2e6b8550c978d2d
     <configuration name="Server" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -176,6 +298,10 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d99000e4551091b9e2d1491da2e6b8550c978d2d
     <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.Client" />
       <item index="1" class="java.lang.String" itemvalue="Python.Server" />
@@ -186,6 +312,19 @@
         <item index="0" class="java.lang.String" itemvalue="Python.Client" />
         <item index="1" class="java.lang.String" itemvalue="Python.Server" />
         <item index="2" class="java.lang.String" itemvalue="Python.Server (1)" />
+<<<<<<< HEAD
+=======
+=======
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Python.Client" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Server" />
+    </list>
+    <recent_temporary>
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Python.Server" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Client" />
+>>>>>>> 4afd54728609af2711589e57f8596d838baa74dd
+>>>>>>> d99000e4551091b9e2d1491da2e6b8550c978d2d
       </list>
     </recent_temporary>
   </component>
@@ -206,8 +345,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
+=======
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+<<<<<<< HEAD
+>>>>>>> d99000e4551091b9e2d1491da2e6b8550c978d2d
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16071428" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -215,10 +359,40 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26480263" sideWeight="0.4940476" order="2" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+=======
+=======
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14285715" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19736843" sideWeight="0.50595236" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19736843" sideWeight="0.4940476" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> 4afd54728609af2711589e57f8596d838baa74dd
+>>>>>>> d99000e4551091b9e2d1491da2e6b8550c978d2d
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.090460524" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5029762" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19736843" sideWeight="0.49702382" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+>>>>>>> 8a43430b72b1ba791b6213800a911c1316dfafc9
+>>>>>>> 4afd54728609af2711589e57f8596d838baa74dd
+>>>>>>> d99000e4551091b9e2d1491da2e6b8550c978d2d
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -233,10 +407,26 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4afd54728609af2711589e57f8596d838baa74dd
+>>>>>>> d99000e4551091b9e2d1491da2e6b8550c978d2d
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
       <option name="time" value="21" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+      <option name="time" value="2" />
+>>>>>>> 8a43430b72b1ba791b6213800a911c1316dfafc9
+>>>>>>> 4afd54728609af2711589e57f8596d838baa74dd
+>>>>>>> d99000e4551091b9e2d1491da2e6b8550c978d2d
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -251,6 +441,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Client.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
@@ -289,12 +480,19 @@
         </state>
       </provider>
     </entry>
+=======
+<<<<<<< HEAD
+>>>>>>> d99000e4551091b9e2d1491da2e6b8550c978d2d
     <entry file="file://$USER_HOME$/Downloads/Server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#0#13#0" expanded="false" />
+=======
+            <element signature="e#0#13#0" expanded="true" />
+>>>>>>> d99000e4551091b9e2d1491da2e6b8550c978d2d
           </folding>
         </state>
       </provider>
@@ -379,6 +577,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Client.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+=======
+=======
+    <entry file="file://$PROJECT_DIR$/Client.py">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+>>>>>>> 4afd54728609af2711589e57f8596d838baa74dd
+>>>>>>> d99000e4551091b9e2d1491da2e6b8550c978d2d
         <state relative-caret-position="374">
           <caret line="25" column="34" lean-forward="false" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
           <folding>
@@ -404,6 +610,17 @@
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+        <state relative-caret-position="34">
+          <caret line="2" column="10" lean-forward="true" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+          <folding />
+>>>>>>> 8a43430b72b1ba791b6213800a911c1316dfafc9
+>>>>>>> 4afd54728609af2711589e57f8596d838baa74dd
+>>>>>>> d99000e4551091b9e2d1491da2e6b8550c978d2d
         </state>
       </provider>
     </entry>
@@ -421,6 +638,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d99000e4551091b9e2d1491da2e6b8550c978d2d
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -446,18 +667,58 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Downloads/Editado por Naara/Server.py">
+<<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+=======
+<<<<<<< HEAD
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+=======
+          <folding />
+>>>>>>> 8a43430b72b1ba791b6213800a911c1316dfafc9
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server.py">
+>>>>>>> 4afd54728609af2711589e57f8596d838baa74dd
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client.py">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="646">
+          <caret line="38" column="18" lean-forward="false" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+>>>>>>> d99000e4551091b9e2d1491da2e6b8550c978d2d
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Downloads/Server.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="374">
           <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
           <folding>
             <element signature="e#0#13#0" expanded="false" />
+=======
+        <state relative-caret-position="-1565">
+          <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+>>>>>>> d99000e4551091b9e2d1491da2e6b8550c978d2d
           </folding>
         </state>
       </provider>
@@ -466,6 +727,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+<<<<<<< HEAD
         </state>
       </provider>
     </entry>
@@ -483,6 +745,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+=======
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="136">
+          <caret line="8" column="39" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+=======
+        <state relative-caret-position="34">
+          <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+          <folding />
+>>>>>>> 8a43430b72b1ba791b6213800a911c1316dfafc9
+>>>>>>> 4afd54728609af2711589e57f8596d838baa74dd
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server.py">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="25">
+          <caret line="65" column="21" lean-forward="true" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="-1719">
+          <caret line="14" column="52" lean-forward="true" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
+=======
+        <state relative-caret-position="102">
+          <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+>>>>>>> 8a43430b72b1ba791b6213800a911c1316dfafc9
+>>>>>>> 4afd54728609af2711589e57f8596d838baa74dd
+>>>>>>> d99000e4551091b9e2d1491da2e6b8550c978d2d
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
