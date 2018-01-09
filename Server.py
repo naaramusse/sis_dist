@@ -27,7 +27,6 @@ class Server:
         self.sock.bind((str(host), int(port)))
         self.sock.listen(10)
         self.sock.setblocking(False)
-        self.lock = threading.RLock()
 
         accept = threading.Thread(target=self.accept_connection)
         send = threading.Thread(target=self.send_msg, daemon=True)
@@ -55,6 +54,7 @@ class Server:
         con.send('Informe seu nome:'.encode('utf-8'))
         nickname = con.recv(1024).decode('utf-8')
         self.clients[nickname] = con
+        self.print_menu()
         self.receive_msg(con)
 
     def receive_msg(self, client):
