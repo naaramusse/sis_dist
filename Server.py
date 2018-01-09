@@ -5,8 +5,12 @@ import queue
 
 COMMANDS = {'1': ['Exibe este menu'],
             '2': ['Lista dos clientes conectados'],
-            '3': ['Cria um grupo: informe o nome e clientes conectados, (Formato:  grupo_nomeDoGrupo)'],
-            'sair': ['Interrompe a conexao com o cliente '],
+            '3': ['Cria um grupo: informe o nome e clientes conectados, (Formato: 3 grupo_nomeDoGrupo cliente1 cliente2)'],
+            '4': ['Lista de grupos online'],
+            '5': ['Entrar em um grupo - Formato: 5 grupo_nomeDoGrupo'],
+            '6': ['Sair do grupo - Formato: 6 grupo_nomeDoGrupo '],
+            '7': ['Apagar o grupo Formato: 7 grupo_nomeDoGrupo '],
+            'sair': ['Desconectar do sistema '],
             'obs.': ['Para enviar msg para um grupo escreva o nome dele e em seguida a msg']
             }
 
@@ -40,8 +44,6 @@ class Server:
                 self.sock.setblocking(True)
 
                 connection, address = self.sock.accept()
-                print(connection    )
-                #connection.setblocking(False)
                 self.get_client(connection)
 
             except:
@@ -74,7 +76,7 @@ class Server:
         if data:
             msg = data.split()
             if msg[0].isdigit():
-                self.commands(client, msg[0])
+                self.commands(client, data)
             else:
                 self.queue.put((msg[1], nick, msg))
 
@@ -96,11 +98,29 @@ class Server:
 
         elif command[0] == '3':
             try:
-                self.create_group(command[1], command[2:])
+                if command[1:]:
+                    self.create_group(command[1:])
+                    client.send('Grupo criado com sucesso\n'.encode('utf-8'))
             except:
                 client.send(
                     'De um nome para o grupo(Formato:  grupo_nomeDoGrupo) e informe os clientes\n'.encode('utf-8'))
                 return
+
+        elif command[0] == '4':
+            msg = self.list_groups()
+            client.send(msg.encode('utf-8'))
+
+        elif command[0] == '5':
+            msg= self.subscribe(command[1], client)
+            client.send(msg.encode('utf-8'))
+
+        elif command[0] == '6':
+            msg= self.unsubscribe(command[1], client)
+            client.send(msg.encode('utf-8'))
+
+        elif command[0] == '7':
+            msg= self.del_group(command[1])
+            client.send(msg.encode('utf-8'))
         else:
             self.send_msg()
 
@@ -115,11 +135,8 @@ class Server:
         while True:
             if not self.queue.empty():
                 receiver, sender, msg = self.queue.get()
-                print('send')
-                print(msg)
                 if receiver.startswith('grupo'):
-                    msg = msg.split()
-                    self.msg_to_group(msg[0], sender, msg[1:])
+                    self.msg_to_group(receiver, sender, msg[2:])
                 else:
                     self.msg_client(msg[2:], sender, receiver)
                 self.queue.task_done()
@@ -129,7 +146,7 @@ class Server:
         data = ' '
         try:
             self.sock.setblocking(True)
-            if msg != receiver and sender != receiver :
+            if msg != receiver and sender != receiver:
                 data = sender + ' diz ' + data.join(msg)
                 con.send(data.encode())
         except:
@@ -148,26 +165,79 @@ class Server:
 
         return results
 
-    def create_group(self, label, group):
-        group.append(label)
-        self.group.append(group)
-        for i in self.group:
-            print(i)
+    def list_groups(self):
+        results = ''
+        resp = ''
+        if len(self.group) != 0:
+            for g in self.group:
+                results += g['label'] + " "
+
+                for key in list(g.keys()):
+                    if key != 'label':
+                        resp += key + " "
+                results += resp + '\n'
+        else:
+            results = 'Nao ha grupos'
+
+        return results
+
+    def create_group(self, group):
+        list_clients = {'label': group[0]}
+
+        for i, con in self.clients.items():
+            for nick in group:
+                if i == nick:
+                    list_clients[nick] = con
+
+        self.group.append(list_clients)
 
     def msg_to_group(self, label, client, msg):
+        group = {}
+        for a in self.group:
+            if a['label'] == label:
+                group = a.copy()
 
-        condition = filter(lambda x: x[0] == label, self.group)
-        group = list(condition)
-        print(group)
+        data = ''
 
-        for nick, con in self.clients.items():
-            for i in range(len(group)):
+        for nick, con in group.items():
+            if msg:
                 try:
-                    if client != group[1] and nick == group[1]:
-                        # Garante que o cliente não envie a msg para si mesmo
-                        con.send(msg)
+                    data = client + ' diz ' + data.join(msg)
+                    con.send(data.encode())
                 except:
+                    self.sock.setblocking(False)
                     pass
+
+                finally:
+                    self.sock.setblocking(False)
+
+    def subscribe(self, label, client):
+        nick = ''
+        for i, con in self.clients.items():
+            if con == client:
+                nick = i
+        for a in self.group:
+            if a['label'] == label:
+                a[nick] = client
+        return ('Cadastrado com sucesso')
+
+    def unsubscribe(self, label, client):
+        nick = ''
+        for i, con in self.clients.items():
+            if con == client:
+                nick = i
+        for a in self.group:
+            if a['label'] == label:
+                del a[nick]
+        return 'Descadastrado com sucesso'
+
+    def del_group(self, label):
+
+        for a in self.group:
+            if a['label'] == label:
+                self.group.remove(a)
+
+        return 'Grupo apagado'
 
 
 if __name__ == "__main__":
